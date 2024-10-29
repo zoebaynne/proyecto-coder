@@ -1,0 +1,133 @@
+/* Reseteo de CSS */
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+h1 {
+    color: rgb(248, 184, 223);
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(247, 240, 231);
+}
+
+header {
+    background: #b69f9f;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.titulo-principal {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Sección de artículos */
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.articulo-destacado {
+    border: 2px solid #c49d55;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #e6dfdf;
+}
+
+.articulo-destacado img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+}
+
+section {
+    grid-template-columns: 1fr;
+}
+
+/* Sección de consejos */
+.tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tips li {
+    border: 1px solid #b86ea5;
+    color: black;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+/* Estilos para el footer */
+footer {
+    background: #d3b4b4;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer div h5 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #6e582d;
+    text-decoration: none;
+    margin: 10px;
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+        header {
+            padding: 20px 0;
+        }
+
+        .articulo-destacado {
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav ul li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .articulo-destacado {
+            margin: 5px;
+            padding: 10px;
+        }
+    }
