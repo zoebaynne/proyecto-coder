@@ -1,0 +1,195 @@
+// Variables
+$primary-color: rgb(248, 184, 223);
+$background-color: rgb(247, 240, 231);
+$header-background: #b69f9f;
+$footer-background: #d3b4b4;
+$border-color: #c49d55;
+$tip-border-color: #b86ea5;
+$tip-background: #f9f9f9;
+$font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+// Espaciado
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+
+// Mixins
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition($property, $duration) {
+    transition: $property $duration ease;
+}
+
+@mixin animation($name, $duration, $timing-function: ease, $delay: 0s, $iteration-count: 1) {
+    animation: $name $duration $timing-function $delay $iteration-count;
+}
+
+// Animaciones
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+// Reseteo de CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: $primary-color;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $background-color;
+}
+
+header {
+    background: $header-background;
+    padding: $spacing-medium 0;
+    text-align: center;
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            @include flex-center;
+
+            li {
+                margin: 0 $spacing-medium;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    @include transition(color, 0.3s);
+
+                    &:hover {
+                        @include animation(bounce, 0.5s); 
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    padding: $spacing-medium;
+}
+
+.titulo-principal {
+    text-align: center;
+    margin: $spacing-medium 0;
+    @include animation(fadeIn, 1s); 
+}
+
+/* Sección de artículos */
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-medium;
+
+    &.articulo-destacado {
+        border: 2px solid $border-color;
+        @include border-radius(5px);
+        margin: $spacing-medium;
+        padding: $spacing-medium;
+        background-color: #e6dfdf;
+        @include animation(slideIn, 0.5s); 
+
+        img {
+            max-width: 50%;
+            height: auto;
+            @include border-radius(5px);
+        }
+    }
+
+    img {
+        width: 100%;
+        @include border-radius(15px);
+        @include animation(fadeIn, 1s); 
+    }
+}
+
+/* Tips */
+.tips {
+    padding: $spacing-medium;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-small;
+
+    h2 {
+        text-align: center;
+        @include animation(fadeIn, 1s); 
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: $spacing-small 0;
+            padding: $spacing-small;
+            border: 1px solid $tip-border-color;
+            background-color: $tip-background;
+            @include border-radius(5px);
+            @include animation(fadeIn, 1s); 
+        }
+    }
+}
+
+/* Footer */
+footer {
+    background: $footer-background;
+    padding: $spacing-medium 0;
+    text-align: center;
+
+    p {
+        color: white;
+    }
+}
