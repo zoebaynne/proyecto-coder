@@ -74,8 +74,8 @@ section {
 }
 
 section img {
-    width: 100%; 
-    border-radius: 15px; 
+    width: 100%;
+    border-radius: 15px;
 }
 
 /* Sección de consejos */
@@ -120,14 +120,15 @@ footer p {
     margin: 10px;
 
     /* Media Queries */
-    
-    /* Para pantallas hasta 600px */ 
+
+    /* Para pantallas hasta 600px */
     @media (max-width: 600px) {
         nav ul li {
             display: block;
             margin: 10px 0;
         }
     }
+
     /* Pantallas desde 601px hasta 900px */
     @media (max-width: 601px) and (max-width: 900px) {
         .tips {
@@ -138,7 +139,8 @@ footer p {
             font-size: 16px;
         }
     }
-     /* Pantallas de 901px a 1400px */
+
+    /* Pantallas de 901px a 1400px */
     @media (min-width: 901px) and (max-width: 1400px) {
         .tips {
             max-width: 800px;
@@ -149,4 +151,4 @@ footer p {
         .tips ul li {
             font-size: 18px;
         }
-    }
+    } 
